@@ -3,6 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebase from 'firebase';
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: "AIzaSyBrRa6ZyKTrCbeJ5-pvTkyacZiCMy88A_o",
+    authDomain: "ecommbuilder-b5e49.firebaseapp.com",
+    projectId: "ecommbuilder-b5e49",
+    storageBucket: "ecommbuilder-b5e49.appspot.com",
+    messagingSenderId: "981704972484",
+    appId: "1:981704972484:web:d3d5093b1259ad58fcd191",
+    measurementId: "G-PNP5Z0YVQZ"
+});
 
 ReactDOM.render(
   <React.StrictMode>
