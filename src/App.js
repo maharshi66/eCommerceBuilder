@@ -1,6 +1,7 @@
 import React from 'react';
 import SignIn from './components/SignIn/SignIn';
 import Header from './components/Header/Header';
+import Body from './components/Body/Body';
 import firebase from 'firebase';
 import tachyons from 'tachyons';
 
@@ -9,6 +10,7 @@ class App extends React.Component{
   	super(props);
   	this.state = {
 		isSignedIn: false,
+		isGettingStarted: false
 	}
   }
 
@@ -18,25 +20,22 @@ class App extends React.Component{
   	});
   }
 
+  handleLogoClicked = () =>{
+  	if(this.state.isSignedIn){
+  		return;	
+  	} 
+  	this.setState({isGettingStarted: false});
+  }
+
+  handleGettingStarted = () => {
+  	this.setState({isGettingStarted: true});
+  }
+  
   render(){
 	return (
 		<div>
-			<Header isSignedIn={this.state.isSignedIn}/>
-			<div>
-				{this.state.isSignedIn 
-					? <div>
-			    		Signed In!
-			    		<button onClick={() => firebase.auth().signOut()}>
-			    			Sign Out
-			    		</button>
-			    		<h1>
-			    			Welcome, {firebase.auth().currentUser.displayName}!
-			    		</h1>
-			    		<img src={firebase.auth().currentUser.photoURL} alt="" />
-			    	  </div> 
-					:	<SignIn className="mw6-ns pa2 mt5 center shadow-1"/>
-				}
-			</div>
+			<Header isSignedIn={this.state.isSignedIn} handleLogoClicked={this.handleLogoClicked} handleGettingStarted={this.handleGettingStarted} isGettingStarted={this.state.isGettingStarted}/>
+			<Body isSignedIn={this.state.isSignedIn} isGettingStarted={this.state.isGettingStarted} />
 		</div>
 	);
   }
