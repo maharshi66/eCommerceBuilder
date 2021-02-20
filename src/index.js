@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SignIn from './SignIn';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 import firebase from 'firebase';
 
 // Initialize Firebase
@@ -17,9 +17,7 @@ firebase.initializeApp({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SignIn />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
