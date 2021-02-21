@@ -14,17 +14,24 @@ class Header extends React.Component{
 		const handleLogoClicked = this.props.handleLogoClicked;
 		const isGettingStarted = this.props.isGettingStarted;
 		return (
-			<div className="w-100 pa3 ph5-ns bg-washed-blue">
-	            <div className="db dt-ns mw9 center w-100">
-	              <div className="db dtc-ns v-mid tl w-50">
-	                <a onClick={handleLogoClicked} className="dib f4 f1-ns fw4 mt0 mb1 link purple titleText pointer" >Purplish</a>
-				 </div>
-				 {isSignedIn
-					? <NavigationRegistered />
-				    : <NavigationUnregistered isGettingStarted={isGettingStarted} handleGettingStarted={handleGettingStarted}/>
-				 }           
+			<header className="w-100 pa3 ph5-ns bg-light-gray">
+	            <div className="flex flex-wrap flex-nowrap-ns items-center mw9 center w-100">
+	              <div className="flex items-center w-100 w-50-ns mb2 mb0-ns">
+	                <a onClick={handleLogoClicked} className="nowrap dib f4 f3-ns fw4 mt0 mb1 link purple pointer">
+		                <span className="titleText">Purplish</span>
+		                <div className="dib">
+						 	<small className="nowrap pl2 pr2 mt2 mt-3-ns f7 black-70">Blazing Fast e-Commerce</small>
+					 	</div>
+				 	</a>
+				  </div>
+					{isSignedIn
+					? <NavigationRegistered className="flex items-center w-100 w-50-ns justify-start justify-end-ns" />
+				    : <NavigationUnregistered className="flex w-100 w-50-ns"
+				     	isGettingStarted={isGettingStarted} 
+				     	handleGettingStarted={handleGettingStarted}/>
+				 	}  
 	            </div>
-	        </div>
+	        </header>
 		);
 	}
 }

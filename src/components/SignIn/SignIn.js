@@ -19,7 +19,7 @@ class SignIn extends React.Component {
   render()
   {
 	 return (
-        <StyledFirebaseAuth 
+        <StyledFirebaseAuth className="mt3 mt0-m mt4-ns mw5 mw6-ns center pa2 shadow-1"
 	    		uiConfig={this.uiConfig}
 	    		firebaseAuth={firebase.auth()}/>
 	 );

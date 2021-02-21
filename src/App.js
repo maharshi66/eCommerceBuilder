@@ -2,6 +2,7 @@ import React from 'react';
 import SignIn from './components/SignIn/SignIn';
 import Header from './components/Header/Header';
 import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
 import firebase from 'firebase';
 import tachyons from 'tachyons';
 
@@ -32,11 +33,17 @@ class App extends React.Component{
   }
   
   render(){
+    const {isSignedIn, isGettingStarted} = this.state;
 	return (
-		<div>
-			<Header isSignedIn={this.state.isSignedIn} handleLogoClicked={this.handleLogoClicked} handleGettingStarted={this.handleGettingStarted} isGettingStarted={this.state.isGettingStarted}/>
-			<Body isSignedIn={this.state.isSignedIn} isGettingStarted={this.state.isGettingStarted} />
-		</div>
+		<div className="container">
+			<Header isSignedIn={isSignedIn} 
+              handleLogoClicked={this.handleLogoClicked} 
+              handleGettingStarted={this.handleGettingStarted} 
+              isGettingStarted={isGettingStarted}/>
+			<Body isSignedIn={isSignedIn} 
+            isGettingStarted={isGettingStarted} />
+		  <Footer />
+    </div>
 	);
   }
 }
