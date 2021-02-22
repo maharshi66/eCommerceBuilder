@@ -35,7 +35,7 @@ class App extends React.Component{
   render(){
     const {isSignedIn, isGettingStarted} = this.state;
 	return (
-		<div className="container">
+		<div className="container outer-container">
 			<Header isSignedIn={isSignedIn} 
               handleLogoClicked={this.handleLogoClicked} 
               handleGettingStarted={this.handleGettingStarted} 

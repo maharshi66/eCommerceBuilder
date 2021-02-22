@@ -25,7 +25,7 @@ class Header extends React.Component{
 				 	</a>
 				  </div>
 					{isSignedIn
-					? <NavigationRegistered className="flex items-center w-100 w-50-ns justify-start justify-end-ns" />
+					? <NavigationRegistered className="flex items-center w-100-ns justify-start justify-end-ns" />
 				    : <NavigationUnregistered className="flex w-100 w-50-ns"
 				     	isGettingStarted={isGettingStarted} 
 				     	handleGettingStarted={handleGettingStarted}/>

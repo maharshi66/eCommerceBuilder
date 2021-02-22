@@ -17,9 +17,11 @@ class Body extends React.Component{
 		let body; 
 		if(isSignedIn){ 
 			body =
+			<div id="outer-container">
 			<h1 className="vh-75 overflow-x-auto">
 				Welcome, {firebase.auth().currentUser.displayName}
-			</h1>			
+			</h1>
+			</div>			
 	    }
 	    else if(isGettingStarted){
 			body = 		
