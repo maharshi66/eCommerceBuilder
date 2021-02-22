@@ -10,12 +10,12 @@ class NavigationUnregistered extends React.Component{
 	}
 	render(){
 		return (
-			<nav className="flex w-100 w-50-ns justify-end justify-end-ns">
+			<nav className="flex w-100 w-50-ns justify-end justify-end-ns absolute right-2">
 			{!this.props.isGettingStarted 
 				?	<button onClick={this.props.handleGettingStarted} 
 						className="f6 link br3 ph3 pv2 mb2 ml5 dib white bg-purple fw6 pointer">Get Started
 						</button> 
-				: null
+				: <div className="ph3 pv2 mb2 ml5"></div>
 			}
 		    </nav>
 		);
